@@ -20,6 +20,7 @@ def lambda_handler(event, context):
 	except Exception as e:
 		print("Exception: "+ str(e))
 		raise(e)
+		return {"msg" : "Exception"}
 
 	return {"msg" : "Success"}
 

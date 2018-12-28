@@ -10,8 +10,15 @@ import sys
 def lambda_handler(event, context):
 	try:
 		aws_request_id = ""
+		aws_request_id = ""
 		if context is not None:
 			aws_request_id = context.aws_request_id
+
+		print("Started")
+		if "text_logging" in os.environ:
+			log = structlog.get_logger()
+		else:
+			log = setup_logging("!Update me with Lambda name!", event, aws_request_id)
 
 		print("Started")
 

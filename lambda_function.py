@@ -5,9 +5,7 @@ import logging
 import structlog
 import os
 import json
-from S3TextFromLambdaEvent import *
-from Event import *
-
+import sys
 
 def lambda_handler(event, context):
 	try:
